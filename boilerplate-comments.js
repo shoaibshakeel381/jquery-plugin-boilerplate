@@ -38,8 +38,13 @@
              * 
              * @type string
              */
-            constant: "value",
-            
+            constant1: "value",
+            /**
+             * Description
+             * 
+             * @type string
+             */
+            constant2: "value",
         };
         
         /**
@@ -115,29 +120,29 @@
 		var methodReturn;
 
 		var $set = this.each(function () {
-			var $this   = $(this);
-			var data    = $this.data('pluginName');
-			var options = typeof option === 'object' && option;
-            
+    		var $this   = $(this);
+    		var data    = $this.data('pluginName');
+    		var options = typeof option === 'object' && option;
+                
             // if data is not already added then first add it
-			if(!data) $this.data('pluginName', (data = new PluginName(this, options)));
-            
+    		if(!data) $this.data('pluginName', (data = new PluginName(this, options)));
+                
             // handle public method or property call
             // apply will pass extra arguments to methods
             // Public method Call structure will be like this:
             // $(elem).pluginName('methodName'[, arg1[, arg2[, ...]]])
             // Public Property Call structure will be like this:
-            // $(elem).pluginName('propertyName')
-			if(typeof option === 'string') {
+    		// $(elem).pluginName('propertyName')
+    		if(typeof option === 'string') {
                 if(typeof data[option] === 'function') {
                     methodReturn = data[option].apply(data, args);
                 } else {
                     methodReturn = data[option];
                 }
             }
-		});
-        
+    	});
+            
         // if public method or property was not found then return all data
-		return (methodReturn === undefined) ? $set : methodReturn;
-	};
+    	return (methodReturn === undefined) ? $set : methodReturn;
+    };
 })(jQuery, document, window);
