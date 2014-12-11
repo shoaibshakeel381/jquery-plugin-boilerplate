@@ -124,14 +124,14 @@
     		var data    = $this.data('pluginName');
     		var options = typeof option === 'object' && option;
                 
-            // if data is not already added then first add it
+            	// if data is not already added then first add it
     		if(!data) $this.data('pluginName', (data = new PluginName(this, options)));
                 
-            // handle public method or property call
-            // apply will pass extra arguments to methods
-            // Public method Call structure will be like this:
-            // $(elem).pluginName('methodName'[, arg1[, arg2[, ...]]])
-            // Public Property Call structure will be like this:
+            	// handle public method or property call
+            	// apply will pass extra arguments to methods
+            	// Public method Call structure will be like this:
+            	// $(elem).pluginName('methodName'[, arg1[, arg2[, ...]]])
+            	// Public Property Call structure will be like this:
     		// $(elem).pluginName('propertyName')
     		if(typeof option === 'string') {
                 if(typeof data[option] === 'function') {
