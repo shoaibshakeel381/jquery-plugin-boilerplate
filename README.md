@@ -22,7 +22,7 @@ To pass custom configurations use following:
 ```javascript
 $('#myElement').pluginName({
   "strProperty": "value",
-  "boolProperty: true
+  "boolProperty": true
 });
 ```
 
